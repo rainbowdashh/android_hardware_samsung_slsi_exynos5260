@@ -16,9 +16,9 @@
 
 ifeq ($(TARGET_BOARD_PLATFORM), exynos5)
 ifeq ($(TARGET_SLSI_VARIANT), bsp)
-ifeq ($(TARGET_SOC), exynos5420)
+ifeq ($(TARGET_SOC), exynos5260)
 
-exynos5420_dirs := \
+exynos5260_dirs := \
     mobicore \
 	libdisplaymodule \
 	libhwcutilsmodule \
@@ -27,11 +27,11 @@ exynos5420_dirs := \
 	libsecurepath
 
 ifeq ($(BOARD_USES_VIRTUAL_DISPLAY), true)
-exynos5420_dirs += \
+exynos5260_dirs += \
 	libvirtualdisplaymodule
 endif
 
-include $(call all-named-subdir-makefiles,$(exynos5420_dirs))
+include $(call all-named-subdir-makefiles,$(exynos5260_dirs))
 
 endif
 endif
