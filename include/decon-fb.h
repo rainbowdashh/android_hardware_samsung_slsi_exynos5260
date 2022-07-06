@@ -1,3 +1,17 @@
+/* include/linux/s3c-fb.h
+ *
+ * Copyright 2008 Openmoko Inc.
+ * Copyright 2008-2010 Simtec Electronics
+ *      Ben Dooks <ben@simtec.co.uk>
+ *      http://armlinux.simtec.co.uk/
+ *
+ * Samsung SoC Framebuffer driver
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software FoundatIon.
+*/
+
 #ifndef __S3C_FB_H__
 #define __S3C_FB_H__
 
@@ -68,10 +82,7 @@ struct s3c_fb_win_config {
 	int	y;
 	__u32	w;
 	__u32	h;
-	bool	protection;
 };
-
-#define WIN_CONFIG_DMA(x) (regs->otf_state[x] != S3C_FB_WIN_STATE_OTF)
 
 /* S3C_FB_MAX_WIN
  * Set to the maximum number of windows that any of the supported hardware
@@ -99,5 +110,4 @@ struct s3c_fb_win_config_data {
 #define S3CFB_WIN_CONFIG		_IOW('F', 209, \
 						struct s3c_fb_win_config_data)
 #define S3CFB_WIN_PSR_EXIT		_IOW('F', 210, int)
-
 #endif /* __S3C_FB_H__ */
